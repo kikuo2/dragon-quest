@@ -1,0 +1,107 @@
+[gd_scene load_steps=13 format=3 uid="uid://do8fk84vq1hej"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_18yxy"]
+[ext_resource type="Texture2D" uid="uid://dyr8l23cgaavt" path="res://assets/brackeys_platformer_assets/sprites/Untitled_Artwork(2).png" id="2_07bw5"]
+[ext_resource type="Texture2D" uid="uid://b3l0oy0q10ivo" path="res://assets/brackeys_platformer_assets/sprites/Untitled_Artwork(3).png" id="2_8yho6"]
+[ext_resource type="Texture2D" uid="uid://cas5vnh6tk0q5" path="res://assets/brackeys_platformer_assets/sprites/jump.png" id="3_crdoo"]
+[ext_resource type="Texture2D" uid="uid://bla5v6id3kcs" path="res://assets/brackeys_platformer_assets/sprites/Untitled_Artwork(1).png" id="3_kg5oj"]
+[ext_resource type="Texture2D" uid="uid://c2fbsoktdoyg4" path="res://assets/brackeys_platformer_assets/sprites/Untitled_Artwork(4).png" id="3_uppvn"]
+[ext_resource type="Texture2D" uid="uid://b7wfdpsr84l2n" path="res://assets/brackeys_platformer_assets/sprites/Untitled_Artwork(5).png" id="4_3opu4"]
+[ext_resource type="Texture2D" uid="uid://cfl1inpv2dexa" path="res://assets/brackeys_platformer_assets/sprites/Untitled_Artwork.png" id="4_lsir0"]
+[ext_resource type="Texture2D" uid="uid://xr4ygll63wxc" path="res://assets/brackeys_platformer_assets/sprites/Joiksmine1.png" id="8_fgpnm"]
+[ext_resource type="Texture2D" uid="uid://cmtd0vqn60hx5" path="res://assets/brackeys_platformer_assets/sprites/Jooksmine2.png" id="10_4ddhp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5owwg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_07bw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kg5oj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lsir0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kg5oj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8yho6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_crdoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8yho6")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8yho6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uppvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8yho6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fgpnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8yho6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3opu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8yho6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fgpnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8yho6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4ddhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8yho6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_crdoo")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f4xam"]
+radius = 5.0
+
+[node name="player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_18yxy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_5owwg")
+animation = &"run"
+autoplay = "idle"
+frame_progress = 0.506188
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_f4xam")

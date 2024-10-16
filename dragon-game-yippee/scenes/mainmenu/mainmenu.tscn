@@ -1,0 +1,137 @@
+[gd_scene load_steps=8 format=3 uid="uid://vy3gryo80mkv"]
+
+[ext_resource type="Script" path="res://scenes/mainmenu/mainmenu.gd" id="1_lggph"]
+[ext_resource type="Texture2D" uid="uid://clihop7iouno1" path="res://yay.png" id="2_ofy1s"]
+[ext_resource type="FontFile" uid="uid://trjxisya7r5v" path="res://GrapeSoda.ttf" id="3_8w0ur"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qc6r7"]
+texture = ExtResource("2_ofy1s")
+modulate_color = Color(0.851038, 0.798706, 0.852133, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nho8"]
+bg_color = Color(0.59551, 0.480865, 0.602246, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfv8j"]
+bg_color = Color(0.35907, 0.273189, 0.364385, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2s2d"]
+bg_color = Color(0.837104, 0.76594, 0.840571, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
+
+[node name="mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lggph")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qc6r7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -110.0
+offset_right = 204.0
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.72684, 0.388512, 0.72243, 1)
+theme_override_colors/font_color = Color(0.486067, 0.323608, 0.483336, 1)
+theme_override_colors/icon_pressed_color = Color(0.585525, 0.417145, 0.565862, 1)
+theme_override_colors/icon_hover_color = Color(0.523999, 0.255293, 0.509881, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.605482, 0.346519, 0.637969, 1)
+theme_override_fonts/font = ExtResource("3_8w0ur")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxFlat_0nho8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wfv8j")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y2s2d")
+text = "Start game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.72684, 0.388512, 0.72243, 1)
+theme_override_colors/font_color = Color(0.486067, 0.323608, 0.483336, 1)
+theme_override_colors/icon_pressed_color = Color(0.585525, 0.417145, 0.565862, 1)
+theme_override_colors/icon_hover_color = Color(0.523999, 0.255293, 0.509881, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.605482, 0.346519, 0.637969, 1)
+theme_override_fonts/font = ExtResource("3_8w0ur")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxFlat_0nho8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wfv8j")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y2s2d")
+text = "Options"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0.72684, 0.388512, 0.72243, 1)
+theme_override_colors/font_color = Color(0.486067, 0.323608, 0.483336, 1)
+theme_override_colors/icon_pressed_color = Color(0.585525, 0.417145, 0.565862, 1)
+theme_override_colors/icon_hover_color = Color(0.523999, 0.255293, 0.509881, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.605482, 0.346519, 0.637969, 1)
+theme_override_fonts/font = ExtResource("3_8w0ur")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxFlat_0nho8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wfv8j")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y2s2d")
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -257.0
+offset_right = 266.0
+offset_bottom = -154.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.481789, 0.481789, 0.481789, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_fonts/font = ExtResource("3_8w0ur")
+theme_override_font_sizes/font_size = 100
+text = "Dragon quest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_quit_pressed"]
